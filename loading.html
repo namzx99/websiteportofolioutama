@@ -363,10 +363,6 @@
         // Try to play background music
      <button id="enterBtn">Enter Portfolio</button>
         const audio = document.getElementById('loadingAudio');
-
-document.getElementById('enterBtn').addEventListener('click', async () => {
-    await audio.play();
-
     setTimeout(() => {
         window.location.href = 'index.html';
     }, 6000);
