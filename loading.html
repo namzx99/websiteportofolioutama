@@ -361,12 +361,21 @@
         }, 150);
 
         // Try to play background music
-        const audio = document.getElementById('loadingAudio');
-        if (audio) 
-            audio.volume = 1.0;
-            
-            audio.play().catch(err => {
-    console.log(err);
+      const audio = document.getElementById('loadingAudio');
+
+audio.play()
+.then(() => {
+    console.log("BERHASIL PLAY");
+})
+.catch(err => {
+    console.error("GAGAL PLAY:", err);
+});
+    audio.addEventListener('canplaythrough', () => {
+    console.log('Audio siap diputar');
+});
+
+audio.addEventListener('error', (e) => {
+    console.log('Audio error:', e);
 });
 
             // Auto play dengan fallback
