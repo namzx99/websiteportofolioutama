@@ -364,8 +364,6 @@
         const audio = document.getElementById('loadingAudio');
         if (audio) 
             audio.volume = 1.0;
-
-            <button id="enterBtn">Enter Portfolio</button>
         
         audio.play()
 .then(() => {
@@ -381,6 +379,7 @@
                 }, 6000);
 
         // Handle user interaction untuk audio
+           <button id="enterBtn">Enter Portfolio</button>
        document.getElementById('enterBtn').addEventListener('click', async () => {
     await audio.play();
                 audio.play().catch(err => {
