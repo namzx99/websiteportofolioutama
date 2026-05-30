@@ -361,14 +361,15 @@
         }, 150);
 
         // Try to play background music
-     const audio = document.getElementById('loadingAudio');
+     <button id="enterBtn">Enter Portfolio</button>
+        const audio = document.getElementById('loadingAudio');
 
-audio.addEventListener('canplay', () => {
-    console.log('Audio loaded');
-});
+document.getElementById('enterBtn').addEventListener('click', async () => {
+    await audio.play();
 
-audio.addEventListener('error', (e) => {
-    console.log('Audio error', e);
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 6000);
 });
 
 audio.play()
@@ -376,10 +377,7 @@ audio.play()
 .catch(err => console.log('PLAY FAIL', err));
 
             // Auto play dengan fallback
-        setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 6000);
-
+    
         // Handle user interaction untuk audio
         document.addEventListener('click', () => {
             if (audio) {
