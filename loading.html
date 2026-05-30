@@ -340,12 +340,10 @@
             <div class="music-info-artist">by Faiz Khoirul Anam</div>
         </div>
     </div>
-
-        <button id="btn">PLAY</button>
-
-    <audio id="loadingAudio" autoplay loop>
-        <source src="asep.mp3" type="audio/mpeg">
-    </audio>
+    
+   <audio id="loadingAudio" controls>
+    <source src="asep.mp3" type="audio/mpeg">
+</audio>
 
     <script>
         // Animate visualizer bars
@@ -381,9 +379,13 @@
                 }, 6000);
 
         // Handle user interaction untuk audio
-    document.getElementById('btn').onclick = async () => {
-    await document.getElementById('audio').play();
-};
+      document.getElementById('enterBtn').addEventListener('click', () => {
+
+                audio.play().catch(err => {
+                    console.log('Audio playback prevented:', err);
+                });
+            }
+        );
     </script>
 </body>
 </html>
