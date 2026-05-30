@@ -360,15 +360,15 @@
             animateBars();
         }, 150);
 
-        // Redirect ke index.html setelah 3.5 detik
-        setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 6000);
-
         // Try to play background music
         const audio = document.getElementById('loadingAudio');
         if (audio) 
             audio.volume = 1.0;
+            
+            // Auto play dengan fallback
+         setTimeout(() => {
+    location.replace('index.html');
+}, 6000);
 
         // Handle user interaction untuk audio
         document.addEventListener('click', () => {
