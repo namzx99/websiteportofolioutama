@@ -361,22 +361,19 @@
         }, 150);
 
         // Try to play background music
-      const audio = document.getElementById('loadingAudio');
+     const audio = document.getElementById('loadingAudio');
 
-audio.play()
-.then(() => {
-    console.log("BERHASIL PLAY");
-})
-.catch(err => {
-    console.error("GAGAL PLAY:", err);
-});
-    audio.addEventListener('canplaythrough', () => {
-    console.log('Audio siap diputar');
+audio.addEventListener('canplay', () => {
+    console.log('Audio loaded');
 });
 
 audio.addEventListener('error', (e) => {
-    console.log('Audio error:', e);
+    console.log('Audio error', e);
 });
+
+audio.play()
+.then(() => console.log('PLAY OK'))
+.catch(err => console.log('PLAY FAIL', err));
 
             // Auto play dengan fallback
         setTimeout(() => {
