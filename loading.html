@@ -365,6 +365,10 @@
         if (audio) 
             audio.volume = 1.0;
             
+            audio.play().catch(err => {
+    console.log(err);
+});
+
             // Auto play dengan fallback
         setTimeout(() => {
                     window.location.href = 'index.html';
