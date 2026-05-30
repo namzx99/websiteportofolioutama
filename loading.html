@@ -381,8 +381,6 @@
         // Handle user interaction untuk audio
       document.getElementById('enterBtn').addEventListener('click', () => {
 
-            audio.play();
-            
                 audio.play().catch(err => {
                     console.log('Audio playback prevented:', err);
                 });
