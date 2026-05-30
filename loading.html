@@ -379,13 +379,13 @@
                 }, 6000);
 
         // Handle user interaction untuk audio
-        document.addEventListener('click', () => {
-            if (audio) {
+       document.getElementById('enterBtn').addEventListener('click', async () => {
+    await audio.play();
                 audio.play().catch(err => {
                     console.log('Audio playback prevented:', err);
                 });
             }
-        });
+        );
     </script>
 </body>
 </html>
