@@ -366,9 +366,9 @@
             audio.volume = 1.0;
             
             // Auto play dengan fallback
-         setTimeout(() => {
-    location.replace('index.html');
-}, 6000);
+        setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 6000);
 
         // Handle user interaction untuk audio
         document.addEventListener('click', () => {
